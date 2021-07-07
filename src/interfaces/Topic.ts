@@ -1,4 +1,4 @@
-import { TopicEventCallback } from "@/types/Topic";
+import { TopicEventCallback } from "../types/Topic";
 
 export interface ITopicEntity {
     eventElement: HTMLElement;

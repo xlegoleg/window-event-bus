@@ -1,5 +1,5 @@
-import { ITopicEntity, ITopicEvent } from "@/interfaces/Topic";
-import { TopicEventCallback } from "@/types/Topic";
+import { ITopicEntity, ITopicEvent } from "../interfaces/Topic";
+import { TopicEventCallback } from "../types/Topic";
 
 export class Topic implements ITopicEntity{
     public eventElement: HTMLElement;
@@ -34,7 +34,9 @@ export class Topic implements ITopicEntity{
     }
 
     public emit(eventName: string, payload: any) {
-        this.eventElement.dispatchEvent(new CustomEvent(eventName, payload));
+        this.eventElement.dispatchEvent(new CustomEvent(eventName, {
+            detail: payload
+        }));
     }
 
 }

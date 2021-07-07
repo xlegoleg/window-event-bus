@@ -1,4 +1,4 @@
-import { ITopicEntity } from "@/interfaces/Topic";
+import { ITopicEntity } from "../interfaces/Topic";
 
 export interface IEventBusEntity {
     bus: HTMLElement;

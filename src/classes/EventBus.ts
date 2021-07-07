@@ -1,8 +1,8 @@
-import { ITopicEntity } from "@/interfaces/Topic";
-import { Topic } from "@/classes/Topic";
-import { IEventBusEntity } from "@/interfaces/EventBus";
+import { ITopicEntity } from "../interfaces/Topic";
+import { Topic } from "../classes/Topic";
+import { IEventBusEntity } from "../interfaces/EventBus";
 
-export class EventBus implements IEventBusEntity {
+class EventBus implements IEventBusEntity {
     public bus: HTMLElement;
     public topics: ITopicEntity[];
 
@@ -23,3 +23,5 @@ export class EventBus implements IEventBusEntity {
         return this.topics;
     }
 }
+
+export default EventBus;
