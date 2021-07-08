@@ -1,9 +1,9 @@
 import { ITopicEntity } from "../interfaces/Topic";
 
 export interface IEventBusEntity {
-    bus: HTMLElement;
     topics: ITopicEntity[];
+    defaultTopic: ITopicEntity;
     addTopic: (name: string) => void;
-    getTopic: (name: string) => ITopicEntity | undefined;
+    getTopic: (name: string) => ITopicEntity;
     getAllTopics: () => ITopicEntity[];
 }

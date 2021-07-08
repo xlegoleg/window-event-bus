@@ -1,13 +1,12 @@
 {
   "name": "@legoleg/custom-event-bus",
-  "version": "1.1.0",
+  "version": "1.1.5",
   "description": "window event bus, using custom events",
   "module": "src/index.ts",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && webpack --mode development"
+    "build": "tsc --build"
   },
   "babel": {
     "presets": [
@@ -21,18 +20,6 @@
   "author": "Oleg Kurganov",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.14.5",
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.7",
-    "@babel/preset-typescript": "^7.14.5",
-    "@babel/types": "^7.14.5",
-    "extract-loader": "^2.0.1",
-    "file-loader": "^6.2.0",
-    "jest": "^27.0.6",
-    "source-map": "^0.7.3",
-    "ts-loader": "^9.2.3",
-    "typescript": "^4.3.5",
-    "webpack": "^5.0.0",
-    "webpack-cli": "^4.7.2"
+    "typescript": "^4.3.5"
   }
 }

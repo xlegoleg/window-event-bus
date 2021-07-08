@@ -3,20 +3,31 @@ import { Topic } from "../classes/Topic";
 import { IEventBusEntity } from "../interfaces/EventBus";
 
 class EventBus implements IEventBusEntity {
-    public bus: HTMLElement;
     public topics: ITopicEntity[];
+    public defaultTopic: ITopicEntity;
 
     constructor() {
-        this.bus = document.createElement('eventBusElement');
-        this.topics = [];
+        const defaultTopic = new Topic('application')
+        this.defaultTopic = defaultTopic
+        this.topics = [defaultTopic];
     }
 
     public addTopic(name: string) {
-        this.topics.push(new Topic(name, this.bus));
+        if (!this.topics.find(topic => topic.name === name)) {
+            this.topics.push(new Topic(name));
+        } else {
+            console.warn(`[EventBus]: Topic with name ${name} is already exists`);
+        }
     }
 
-    public getTopic(name: string): ITopicEntity | undefined {
-        return this.topics.find(topic => topic.name === name) || undefined;
+    public getTopic(name: string): ITopicEntity {
+        const topic = this.topics.find(topic => topic.name === name) || null
+        if (topic) {
+            return topic;
+        } else {
+            console.warn(`[EventBus]: Topic with name ${name} is not exists, returned default application topic`);
+            return this.defaultTopic;
+        }
     }
 
     public getAllTopics(): ITopicEntity[] {
